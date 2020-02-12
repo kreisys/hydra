@@ -1,59 +1,67 @@
 {
-  "inputs": {
+  "nodes": {
     "nix": {
       "info": {
-        "lastModified": 1582125169,
-        "narHash": "sha256-rgoyhvUVM78gLkvviTA/9f6esC7ZJtnDLt1hzAaq2Ds="
+        "lastModified": 1581473412,
+        "narHash": "sha256-UGad0pk3LB3xKDgfs23AEpp+jnU6IIk8cj6FroYu2t0="
       },
       "inputs": {
-        "nixpkgs": {
-          "info": {
-            "lastModified": 1580555706,
-            "narHash": "sha256-ly5Gxl9yZgW2w1F3aDU5bvg34Ct+juUaOg8vue+Mkbo="
-          },
-          "inputs": {},
-          "locked": {
-            "owner": "edolstra",
-            "repo": "nixpkgs",
-            "rev": "43e283790fbe330b723ac44b584824cf6d85c1ee",
-            "type": "github"
-          },
-          "original": {
-            "id": "nixpkgs",
-            "ref": "release-19.09",
-            "type": "indirect"
-          }
-        }
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "owner": "NixOS",
+        "owner": "kreisys",
         "repo": "nix",
-        "rev": "4ad5826a182f8eeb4cbc61e27d2128b08050b0d4",
+        "rev": "26280b906939be5b5334985ac772bd0d61d657e4",
         "type": "github"
       },
       "original": {
-        "id": "nix",
-        "type": "indirect"
+        "owner": "kreisys",
+        "ref": "flakes",
+        "repo": "nix",
+        "type": "github"
       }
     },
     "nixpkgs": {
       "info": {
-        "lastModified": 1581348815,
-        "narHash": "sha256-ZYGphR59gsdFhtZYDoeuCtULm8ym/qJSHIslih9b1s8="
+        "lastModified": 1581465827,
+        "narHash": "sha256-/GrUGIQ6zykfVfksl0VmckMzPYet0NEXA3T6wdc/8z4="
       },
-      "inputs": {},
       "locked": {
-        "owner": "edolstra",
+        "owner": "kreisys",
         "repo": "nixpkgs",
-        "rev": "d959778e0934c4c93896d509a65de798909c7cdd",
+        "rev": "598001867d690b74efb3c87541aca59715052d58",
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "ref": "release-19.09",
-        "type": "indirect"
+        "owner": "kreisys",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "info": {
+        "lastModified": 1581465827,
+        "narHash": "sha256-/GrUGIQ6zykfVfksl0VmckMzPYet0NEXA3T6wdc/8z4="
+      },
+      "locked": {
+        "owner": "kreisys",
+        "repo": "nixpkgs",
+        "rev": "598001867d690b74efb3c87541aca59715052d58",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kreisys",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nix": "nix",
+        "nixpkgs": "nixpkgs_2"
       }
     }
   },
-  "version": 4
+  "root": "root",
+  "version": 5
 }

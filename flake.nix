@@ -3,7 +3,8 @@
 
   edition = 201909;
 
-  inputs.nixpkgs.uri = "nixpkgs/release-19.09";
+  inputs.nixpkgs.uri = "github:kreisys/nixpkgs";
+  inputs.nix.uri     = "github:kreisys/nix/flakes";
 
   outputs = { self, nixpkgs, nix }:
     let
