@@ -3,8 +3,8 @@
 
   edition = 201909;
 
-  inputs.nixpkgs.uri = "github:kreisys/nixpkgs";
-  inputs.nix.uri     = "github:kreisys/nix/flakes";
+  inputs.nixpkgs.uri = "nixpkgs/nixos-20.03-small";
+  inputs.nix.uri = "github:kreisys/nix/flakes";
 
   outputs = { self, nixpkgs, nix }:
     let
@@ -105,7 +105,7 @@
 
           buildInputs =
             [ makeWrapper autoconf automake libtool unzip nukeReferences pkgconfig sqlite libpqxx
-              gitAndTools.topGit mercurial darcs subversion bazaar openssl bzip2 libxslt
+              gitAndTools.topGit mercurial_4 darcs subversion bazaar openssl bzip2 libxslt
               perlDeps perl final.nix
               postgresql95 # for running the tests
               boost
@@ -116,7 +116,7 @@
 
           hydraPath = lib.makeBinPath (
             [ sqlite subversion openssh final.nix coreutils findutils pixz
-              gzip bzip2 lzma gnutar unzip git gitAndTools.topGit mercurial darcs gnused bazaar
+              gzip bzip2 lzma gnutar unzip git gitAndTools.topGit mercurial_4 darcs gnused bazaar
             ] ++ lib.optionals stdenv.isLinux [ rpm dpkg cdrkit ] );
 
           configureFlags = [ "--with-docbook-xsl=${docbook_xsl}/xml/xsl/docbook" ];
@@ -278,6 +278,7 @@
 
       packages.x86_64-linux.hydra = pkgs.hydra;
       defaultPackage.x86_64-linux = pkgs.hydra;
+      defaultPackage.x86_64-darwin = pkgs.hydra;
 
       nixosModules.hydra = {
         imports = [ ./hydra-module.nix ];
