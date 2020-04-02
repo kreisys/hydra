@@ -2,40 +2,38 @@
   "nodes": {
     "nix": {
       "info": {
-        "lastModified": 1585418976,
-        "narHash": "sha256-SB+GivLIbbShh13ova5YRsFF/trvoCUBGlhXmNzfcis="
+        "lastModified": 1585821341,
+        "narHash": "sha256-46jAkrs85jQaC1dmGaFLJhPMCGfxGqLOpoS9XonLneg="
       },
       "inputs": {
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "owner": "kreisys",
+        "owner": "NixOS",
         "repo": "nix",
-        "rev": "2fccef0c59f57ad276a60f6d3ae59dcc36a51027",
+        "rev": "00e1400eb741d4f5329a6bcfdc8946617967dcb1",
         "type": "github"
       },
       "original": {
-        "owner": "kreisys",
-        "ref": "flakes",
-        "repo": "nix",
-        "type": "github"
+        "id": "nix",
+        "type": "indirect"
       }
     },
     "nixpkgs": {
       "info": {
-        "lastModified": 1585439960,
-        "narHash": "sha256-0PGQgzbjaLKdFDWgsafnFk6N8N4CQUpApcJyrzxHA0g="
+        "lastModified": 1585405475,
+        "narHash": "sha256-bESW0n4KgPmZ0luxvwJ+UyATrC6iIltVCsGdLiphVeE="
       },
       "locked": {
-        "owner": "kreisys",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "85af8b47e331a77ba8092225fe9dba2609b491b9",
+        "rev": "b88ff468e9850410070d4e0ccd68c7011f15b2be",
         "type": "github"
       },
       "original": {
-        "owner": "kreisys",
-        "repo": "nixpkgs",
-        "type": "github"
+        "id": "nixpkgs",
+        "ref": "nixos-20.03-small",
+        "type": "indirect"
       }
     },
     "nixpkgs_2": {
