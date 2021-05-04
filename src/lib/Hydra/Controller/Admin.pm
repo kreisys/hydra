@@ -2,7 +2,6 @@ package Hydra::Controller::Admin;
 
 use strict;
 use warnings;
-# use base 'Catalyst::Controller';
 use base 'Hydra::Base::Controller::REST';
 use Hydra::Helper::Nix;
 use Hydra::Helper::CatalystUtils;
@@ -29,10 +28,15 @@ sub users_GET {
 }
 
 
-sub machines : Chained('admin') PathPart('machines') Args(0) {
+sub machines : Chained('admin') PathPart('machines') Args(0) :ActionClass('REST') { }
+
+sub machines_GET {
     my ($self, $c) = @_;
-    $c->stash->{machines} = getMachines;
     $c->stash->{template} = 'machines.tt';
+    $c->stash->{machines} = getMachines;
+    $self->status_ok($c,
+        entity => $c->stash->{machines}
+    )
 }
 
 
