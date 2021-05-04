@@ -69,12 +69,16 @@ sub clearvcscache : Chained('admin') PathPart('clear-vcs-cache') Args(0) {
 }
 
 
-sub managenews : Chained('admin') PathPart('news') Args(0) {
+sub managenews : Chained('admin') PathPart('news') Args(0) :ActionClass('REST') { }
+
+sub managenews_GET {
     my ($self, $c) = @_;
 
-    $c->stash->{newsItems} = [$c->model('DB::NewsItems')->search({}, {order_by => 'createtime DESC'})];
-
     $c->stash->{template} = 'news.tt';
+    $c->stash->{newsItems} = [$c->model('DB::NewsItems')->search({}, {order_by => 'createtime DESC'})];
+    $self->status_ok($c,
+        entity => $c->stash->{newItems}
+    )
 }
 
 
