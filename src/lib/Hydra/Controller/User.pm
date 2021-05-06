@@ -346,6 +346,10 @@ sub edit :Chained('user') :PathPart('') :Args(0) :ActionClass('REST::ForBrowsers
 sub edit_GET {
     my ($self, $c) = @_;
     $c->stash->{template} = 'user.tt';
+
+    $self->status_ok($c,
+        entity => $c->stash->{user}
+    );
 }
 
 sub edit_PUT {
