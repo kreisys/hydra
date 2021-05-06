@@ -204,6 +204,7 @@ my %hint = (
         "fullname",
         "emailaddress",
         "emailonerror",
+        "type",
         "username",
         "publicdashboard"
     ],
