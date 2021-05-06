@@ -203,7 +203,9 @@ my %hint = (
     columns => [
         "fullname",
         "emailaddress",
-        "username"
+        "emailonerror",
+        "username",
+        "publicdashboard"
     ],
     relations => {
         userroles => "role"
